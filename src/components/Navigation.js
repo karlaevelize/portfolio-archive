@@ -18,13 +18,15 @@ const Container = styled.div`
   align-items: center;
   /* background-color: blue;  */
   height: 60px;
+  position: sticky;
+  width: 100%;
 `
 
 const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
   margin-left: 15px;
-  /* color: palevioletred; */
+  color: palevioletred;
   /* font-weight: lighter; */
   font-family: 'Special Elite', cursive;
 `

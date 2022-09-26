@@ -6,7 +6,7 @@ const PortfolioCard = ({ item }) => {
 
   const [ modalOpen, setModalOpen ] = useState(false);
 
-  const { name, imageUrl, description, tags } = item
+  const { name, author, imageUrl, description, tags } = item
 
   return (
     <>
@@ -17,27 +17,28 @@ const PortfolioCard = ({ item }) => {
         <div style={{ margin: 10 }}>
           <Title>{name.toUpperCase()}</Title>
           <Description>{description}</Description>
+          <div>
+            Created by {author}
+          </div>
           <div >
             {tags.map(tag => (
                 <li>{tag}</li>
             ))}
           </div>
-          <button
-            className="openModalBtn"
-            onClick={() => setModalOpen(true)}
-          >
-          Open
-          </button>
+          <div style={{ textAlign: "right" }}>
+            <Button onClick={() => setModalOpen(true)}>
+              More info
+            </Button>
+          </div>
         </div>
       </Container>
-      {modalOpen && <Modal setOpenModal={setModalOpen}> 
-        <div className="title">
-          <h1>Are You Sure You Want to Continue?</h1>
-        </div>
-        <div className="body">
-          <p>The next page looks amazing. Hope you want to go there!</p>
-        </div>
-      </Modal>}
+      {modalOpen && (
+        <Modal setOpenModal={setModalOpen}> 
+          <ModalContainer>
+            Coming soon...
+          </ModalContainer>
+        </Modal>
+      )}
     </>
   )
 }
@@ -50,7 +51,13 @@ const Container = styled.div`
   max-width: 300px;
   margin: 20px;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px;
+  border: 1px solid #DCDCDC;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px; */
+`
+
+const ModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `
 
 const Title = styled.div`
@@ -61,4 +68,16 @@ const Title = styled.div`
 
 const Description = styled.div`
   color: #49494E;
+`
+
+const Button = styled.button`
+  /* border: 1px solid #DCDCDC; */
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 11px;
+  /* background-color: #4682B4; */
+
+  &:hover {
+    color: #4682B4
+  }
 `
