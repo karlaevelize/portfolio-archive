@@ -4,7 +4,8 @@ const Navigation = () => {
 
   return (
     <Container>
-      <Title>Portfolio Archive 📚</Title>
+      <Title>PORTFOLIO ARCHIVE <spam style={{ color: "red", fontSize: 10 }}>Codaisseur</spam></Title>
+      <Title>Add Project +</Title>
     </Container>
   )
 }
@@ -14,19 +15,19 @@ export { Navigation }
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  /* background-color: blue;  */
+  background-color: white; 
   height: 60px;
-  position: sticky;
+  position: fixed;
   width: 100%;
+  border-bottom: 1px solid #DCDCDC;
+  overflow: hidden;
 `
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  margin-left: 15px;
-  color: palevioletred;
-  /* font-weight: lighter; */
-  font-family: 'Special Elite', cursive;
+const Title = styled.div`
+  font-size: 15px;
+  margin: 0px 15px;
+  font-weight: 600;
+  /* font-family: 'Special Elite', cursive; */
 `

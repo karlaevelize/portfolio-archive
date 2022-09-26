@@ -15,25 +15,15 @@ const Modal = ({ setOpenModal, children }) => {
     <ModalBackground ref={modalRef} onClick={closeModalOutsideClik}>
       <ModalContent>
         <CloseButton>
-          <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
-          >
+          <button onClick={() => setOpenModal(false)}>
             X
           </button>
         </CloseButton>
           {children}
-        <div className="footer">
-          <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
-            id="cancelBtn"
-          >
-            Cancel
+        <div>
+          <button onClick={() => setOpenModal(false)}>
+            Close
           </button>
-          <button>Continue</button>
         </div>
       </ModalContent>
     </ModalBackground>

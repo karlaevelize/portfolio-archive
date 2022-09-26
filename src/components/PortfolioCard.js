@@ -14,22 +14,24 @@ const PortfolioCard = ({ item }) => {
         <div>
           <img style={{ height: "100%", borderTopLeftRadius: 20, borderTopRightRadius: 20 }} src={imageUrl} alt={name}/>
         </div>
-        <div style={{ margin: 10 }}>
+        <div style={{ margin: 15, }}>
           <Title>{name.toUpperCase()}</Title>
+          <Author>
+            <p>Created by <spam>{author}</spam></p>
+          </Author>
           <Description>{description}</Description>
-          <div>
-            Created by {author}
-          </div>
-          <div >
-            {tags.map(tag => (
-                <li>{tag}</li>
-            ))}
-          </div>
-          <div style={{ textAlign: "right" }}>
-            <Button onClick={() => setModalOpen(true)}>
-              More info
-            </Button>
-          </div>
+          {/* <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}> */}
+            <TagsContainer>
+              {tags.map(tag => (
+                  <Tag style={{ backgroundColor: tag.color }}>{tag.name}</Tag>
+              ))}
+            </TagsContainer>
+          {/* </div> */}
+            <div style={{ textAlign: "right" }}>
+              <Button onClick={() => setModalOpen(true)}>
+                More info
+              </Button>
+            </div>
         </div>
       </Container>
       {modalOpen && (
@@ -60,6 +62,23 @@ const ModalContainer = styled.div`
   flex-direction: column;
 `
 
+const TagsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 78%;
+`
+
+const Tag = styled.div`
+  /* border: 1px solid #DCDCDC; */
+  padding: 4px 14px;
+  font-size: 12px;
+  border-radius: 30px;
+  margin: 5px 2px;
+  color: black;
+`
+
 const Title = styled.div`
   margin: 10;
   color: #4682B4;
@@ -68,6 +87,13 @@ const Title = styled.div`
 
 const Description = styled.div`
   color: #49494E;
+  margin: 5px 0px;
+  font-weight: 300;
+`
+
+const Author = styled.div`
+  font-size: 12px;
+  font-weight: 150;
 `
 
 const Button = styled.button`
