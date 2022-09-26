@@ -1,0 +1,37 @@
+{
+  "fvv": 1,
+  "pageHistory": 0,
+  "fbzx": "-1025682757310842135",
+  "action": "e/1FAIpQLSf_hE4qhex8Lb64wOsYKwQElBKK1Ph4lDjNo4MZiW3MjTO3pA",
+  "title": "Dummy Archive",
+  "description": null,
+  "fields": [
+    {
+      "label": "Name",
+      "description": null,
+      "type": "SHORT_ANSWER",
+      "id": "822275673",
+      "required": false
+    },
+    {
+      "label":"Email",
+      "description": null,
+      "type": "SHORT_ANSWER",
+      "id": "1048904884",
+      "required": false
+    },
+    {
+      "label": "Age",
+      "description": null,
+      "type": "SHORT_ANSWER",
+      "id": "412743968",
+      "required": false
+    }
+  ],
+  "fieldsOrder": 
+  {
+    "412743968": 2,
+    "822275673": 0,
+    "1048904884": 1
+  }
+}

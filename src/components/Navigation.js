@@ -1,11 +1,16 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 const Navigation = () => {
 
   return (
     <Container>
-      <Title>PORTFOLIO ARCHIVE <spam style={{ color: "red", fontSize: 10 }}>Codaisseur</spam></Title>
-      <Title>Add Project +</Title>
+      <Link to="/">
+        <Title>PORTFOLIO ARCHIVE <spam style={{ color: "red", fontSize: 10 }}>Codaisseur</spam></Title>
+      </Link>
+      <Link to="/add-project">
+        <Title>Add Project +</Title>
+      </Link>
     </Container>
   )
 }

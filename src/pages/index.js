@@ -1,2 +1,2 @@
 export * from "./Homepage"
-export * from "./AddPortfolio"
+export * from "./AddProject"
